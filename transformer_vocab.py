@@ -7,9 +7,9 @@ class TransformersVocab(Vocab):
     # itos is a list of token vocab
     # stoi is an id:tok dictionary, built below
     # Overwrite base functions to use pt_tokenizer behaviour
-    def __init__(self, pretrained_tokenizer):
+    def __init__(self, tokenizer):
         super().__init__(itos = [])
-        self.tokenizer = pretrained_tokenizer
+        self.tokenizer = tokenizer
     
     def numericalize(self, t:Collection[str]) -> List[int]:
         "Convert a list of tokens `t` to their ids."
